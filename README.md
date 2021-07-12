@@ -26,29 +26,28 @@
   - 20%의 Data 중 유저를 무작위로 shuffle하여 8 : 2로 Val과 Test Data로 활용
 
 ## Game2Vec
-- [Prod2Vec (Sequence)]()
+- [Prod2Vec (Sequence)](https://github.com/SeongBeomLEE/Tobigs_GamePlayList_Model/blob/main/Prod2Vec_(Sequence).ipynb)
   - 유저의 게임 플레이 Sequence를 Window 단위로 학습하여 Game의 Vector를 구함
   - 총 4가지의 경우 중, 유저의 선호도 구분 O / 순서 Shuffle O 의 경우가 가장 높은 성능을 보임
   - 유저의 선호도를 바탕으로 게임을 추천해줌
-- [AutoEncoder (Text)]()
+- [AutoEncoder (Text)](https://github.com/SeongBeomLEE/Tobigs_GamePlayList_Model/blob/main/AutoEncoder_(Text).ipynb)
   - 게임의 장르를 AE를 통하여 Encoding하여 Latent Space를 구하여 Game의 Vector를 구함
   - 유사한 장르의 게임을 추천해줌
-- [Convolutional AutoEncoder (Image)]()
+- [Convolutional AutoEncoder (Image)](https://github.com/SeongBeomLEE/Tobigs_GamePlayList_Model/blob/main/Convolutional_AutoEncoder_(Image).ipynb)
   - 게임의 타이틀 이미지를 CAE를 통하여 Encoding하여 Latent Space를 구하여 Game의 Vector를 구함
   - 비슷한 이미지의 게임을 추천해줌
-- [Game2Vec]()
+- [Game2Vec](https://github.com/SeongBeomLEE/Tobigs_GamePlayList_Model/blob/main/Game2Vec.ipynb)
   - Sequence, Text, Image를 이용하여 구한 각각의 Vector를 Concat하여 Game2Vec을 구함
   - 각 Vector를 norm 정규화
   - 장르, 선호도, 이미지를 고려하여 게임을 추천해줌
 
 ## Model
-
 | Model | Game2Vec 사용 | ACC | F1-Score | AUC |
 | :--- | :--- | :--- | :--- | :--- |
-| [General Matrix Factorization]() | X | 78.51% | 0.8711 | 0.7745 |
-| [General Matrix Factorization]() | O | 83.62% | 0.8986 | 0.8526 |
-| [Neural Collaborative Filtering]() | O | 81.5% | 0.8837 | 0.8391 |
-| [Neural Matrix Factorization]() | O | 84.33% | 0.9007 | 0.8715 |
-| [Deep & Cross Network Parallel]() | O | 82.31% | 0.8868 | 0.8463 |
-| [Deep & Cross Network Stacked]() | O | 82.55% | 0.8876 | 0.8500 |
-| [DeepFM]() | O |  |  |  |
+| [General Matrix Factorization](https://github.com/SeongBeomLEE/Tobigs_GamePlayList_Model/blob/main/GMF_Base.ipynb) | X | 78.51% | 0.8711 | 0.7745 |
+| [General Matrix Factorization](https://github.com/SeongBeomLEE/Tobigs_GamePlayList_Model/blob/main/GMF.ipynb) | O | 83.62% | 0.8986 | 0.8526 |
+| [Neural Collaborative Filtering](https://github.com/SeongBeomLEE/Tobigs_GamePlayList_Model/blob/main/NCF.ipynb) | O | 81.50% | 0.8837 | 0.8391 |
+| [Neural Matrix Factorization](https://github.com/SeongBeomLEE/Tobigs_GamePlayList_Model/blob/main/NMF.ipynb) | O | 84.33% | 0.9007 | 0.8715 |
+| [Deep & Cross Network Parallel](https://github.com/SeongBeomLEE/Tobigs_GamePlayList_Model/blob/main/DCN_Parallel.ipynb) | O | 82.31% | 0.8868 | 0.8463 |
+| [Deep & Cross Network Stacked](https://github.com/SeongBeomLEE/Tobigs_GamePlayList_Model/blob/main/DCN_Stacked.ipynb) | O | 82.55% | 0.8876 | 0.8500 |
+| [DeepFM](https://github.com/SeongBeomLEE/Tobigs_GamePlayList_Model/blob/main/DeepFM.ipynb) | O | 83.17% | 0.8929 | 0.8522 |
