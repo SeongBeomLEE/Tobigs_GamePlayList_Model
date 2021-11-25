@@ -1,11 +1,18 @@
 # Tobigs_GamePlayList_Model
-투빅스 게임플레이리스트 프로젝트를 진행하면서 만든 추천시스템 모델 코드가 있는 폴더입니다.
-
-[전체 코드 및 프로젝트 소개](https://github.com/SeongBeomLEE/gameplaylist)
+- Tobigs GamePlatList Project를 진행하면서 만든 추천시스템 모델 코드 및 프로젝트 내용을 정리한 폴더입니다.
+- [**전체 코드 및 프로젝트 소개**](https://github.com/SeongBeomLEE/gameplaylist)
+- [**발표 영상**](https://www.youtube.com/watch?v=UpHYyDlUfsQ)
+- [**최종 보고서**](http://www.datamarket.kr/xe/board_pdzw77/74633)
 
 ## 주제
-- Item2Vec 모델과 Matrix Factorization 모델의 결합
-- MF의 관점에서 추천 시스템은 User와 Item의 interaction을 함께 학습시킨다. 그러나 기존의 MF와 달리 우리는 Content-Based Model을 통해서 Item의 Latent Space를 먼저 구한 후 User의 Latent Space를 MF를 통해서 학습시키는 방향으로 진행했다. Content-Based Model을 통해서 구해진 Item의 Vector가 게임들의 Representation을 잘 나타내는 Embedding을 가졌다고 가정하고 이를 Game2Vec이라 지칭하였다. 구해진 Game2Vec을 MF의 Item Embedding으로 활용하여 User의 Embedding을 학습시켜 나갔다. 만약 우리가 만든 모델이 유저의 선호도를 잘 파악한다면 Game2Vec은 좋은 Representation을 가졌다고 볼 수 있다. 따라서 우리는 이러한 게임의 Representation을 잘 나타내는 Game2Vec을 활용하여 유사한 게임을 추천해주는 웹을 구현했다.
+- 본 프로젝트에서는 Game2Vec을 구현하고, Game2Vec이 좋은 Representation을 가졌는지 평가하기 위해서 GMF, NCF, NMF, DCN, DeepFM 모델을 구현함
+- Play Sequence, 이미지, 장르 데이터를 각각 Prod2Vec, Convolutional AutoEncoder, AutoEncoder를 이용하여 Multimodal Feature를 생성함
+- Content-Based Model을 통해서 만들어진 Multimodal Feature가 게임들의 Representation을 잘 나타내는 Embedding을 가졌다고 가정하고 이를 Game2Vec이라 지칭함
+- Game2Vec을 Collaborative Filtering Model의 Item Embedding 으로 활용함
+- Item Embedding을 고정 시킨 후 User의 Embedding 을 업데이트하는 방식으로 모델을 학습함
+- Game2Vec을 사용한 Collaborative Filtering Model의 성능이 Game2Vec을 사용하기 전의 모델보다 성능이 좋다면, Game2Vec은 좋은 Representation을 가졌다고 생각함
+- 실제로 Game2Vec을 사용한 모델과 사용하지 않은 모델에 성능 차이가 존재했으며, Game2Vec을 사용한 모델이 5% 이상의 성능 향상을 보여줌
+- 따라서 Game2Vec은 Game의 Representation을 잘 나타낸다고 볼 수 있으며, 우리는 이러한 Game2Vec을 활용하여 유사한 게임을 추천해주는 웹사이트를 만듬
 
 ## 데이터 수집 및 전처리
 - Steam 사이트 속 약 3만 명의 유저 게임 정보 데이터 수집 (유저의 리뷰, 플레이한 게임 목록, 플레이 시간 등)
