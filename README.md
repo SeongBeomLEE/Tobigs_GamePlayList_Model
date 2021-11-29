@@ -4,6 +4,11 @@
 - [**발표 영상**](https://www.youtube.com/watch?v=UpHYyDlUfsQ)
 - [**최종 보고서**](http://www.datamarket.kr/xe/board_pdzw77/74633)
 
+## 소개
+본 프로젝트는 빅데이터 연합동아리 투빅스 제 12회 데이터 분석 컨퍼런스에서 발표한 프로젝트입니다. 
+저는 본 프로젝트에서 데이터 수집 및 전처리, 모델링을 맡았습니다. 
+Steam 사이트 속 약 3만 명의 유저 정보 데이터(유저의 리뷰, 플레이한 게임 목록, 플레이 시간 등)와 약 2만 5천 개의 게임 정보 데이터(게임 타이틀 이미지, 장르, 게임 설명 등)를 수집하여 게임 추천 프로젝트를 진행했습니다.
+
 ## 주제
 - 본 프로젝트에서는 Game2Vec을 구현하고, Game2Vec이 좋은 Representation을 가졌는지 평가하기 위해서 GMF, NCF, NMF, DCN, DeepFM 모델을 구현함
 - Play Sequence, 이미지, 장르 데이터를 각각 Prod2Vec, Convolutional AutoEncoder, AutoEncoder를 이용하여 Multimodal Feature를 생성함
